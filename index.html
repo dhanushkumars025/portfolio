@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanush Kumar - QA Automation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .name {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.8em;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-top: 15px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+            animation: expandWidth 1s ease-out;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            animation: popIn 0.6s ease-out backwards;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            background: linear-gradient(to right, #f8f9ff, white);
+            border-radius: 10px;
+            animation: slideInLeft 0.8s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: linear-gradient(to right, #f0f2ff, white);
+            transform: translateX(10px);
+        }
+
+        .company {
+            font-size: 1.4em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .duration {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 2px solid #e0e5ff;
+            animation: fadeInUp 0.8s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-name {
+            font-size: 1.3em;
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .domain-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .education {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .education h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .education p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            font-size: 1.1em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 60px;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5em;
+            }
+            .title {
+                font-size: 1.3em;
+            }
+            section {
+                padding: 25px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="name">Dhanush Kumar</h1>
+            <p class="title">QA Automation Test Engineer</p>
+            <p class="tagline">Passionate about Quality | Expert in Manual & Automation Testing</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>About Me</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                I am a results-driven Automation Test Engineer with proven expertise in both manual and automation testing. 
+                With hands-on experience across diverse domains including Banking, Warehouse Management, E-commerce, and Telecom, 
+                I bring a comprehensive approach to quality assurance. I specialize in creating robust test scenarios, 
+                executing comprehensive test cases, and building efficient automation frameworks using Java, Selenium, 
+                and TestNG. My ability to quickly adapt to new domains and deliver high-quality results makes me a valuable 
+                asset to any QA team.
+            </p>
+        </section>
+
+        <section>
+            <h2>Why Hire Me?</h2>
+            <div class="skills-grid">
+                <div class="skill-card">🎯 Multi-Domain Expertise</div>
+                <div class="skill-card">⚡ Fast Learner & Adapter</div>
+                <div class="skill-card">🔧 Full Testing Lifecycle</div>
+                <div class="skill-card">📊 Detailed Reporting</div>
+                <div class="skill-card">🚀 Automation Specialist</div>
+                <div class="skill-card">✅ Bug Detection Pro</div>
+            </div>
+            <ul style="font-size: 1.05em; color: #555; margin-top: 25px;">
+                <li><strong>Proven Track Record:</strong> Successfully delivered 5+ projects across different domains</li>
+                <li><strong>End-to-End Testing:</strong> From requirement analysis to test execution and reporting</li>
+                <li><strong>API Testing Expert:</strong> Proficient in Postman for comprehensive API validation</li>
+                <li><strong>Framework Development:</strong> Built reusable automation frameworks with TestNG</li>
+                <li><strong>Detailed Documentation:</strong> Create professional test reports using Extent Reports</li>
+                <li><strong>Quick Adaptation:</strong> Rapidly learn new technologies and business domains</li>
+                <li><strong>Quality Focused:</strong> Committed to delivering bug-free, high-quality software</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">Manual Testing</div>
+                <div class="skill-card">Automation Testing</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">Selenium</div>
+                <div class="skill-card">Postman API</div>
+                <div class="skill-card">TestNG Framework</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company">Revolite InfoTech Private Limited</div>
+                <div class="duration">Current Position</div>
+                <p style="margin-bottom: 15px; color: #666; font-weight: 600;">Automation Test Engineer</p>
+                <ul>
+                    <li>Leading automation testing for 3 major projects: HHF (Banking), Emiza (Warehouse Management), and Fridex (E-commerce)</li>
+                    <li>Developed comprehensive automation framework using Java, Selenium, and TestNG</li>
+                    <li>Reduced testing time by 60% through efficient test automation strategies</li>
+                    <li>Created reusable test components and maintained robust test suites</li>
+                    <li>Implemented data-driven testing approach for multiple test scenarios</li>
+                    <li>Generated professional Extent Reports for stakeholder presentations</li>
+                    <li>Performed API testing using Postman for backend validation</li>
+                    <li>Identified and reported 100+ critical bugs, ensuring product quality</li>
+                </ul>
+            </div>
+
+            <div class="experience-item" style="animation-delay: 0.2s;">
+                <div class="company">Worktual Solutions Private Limited</div>
+                <div class="duration">9 Months</div>
+                <p style="margin-bottom: 15px; color: #666; font-weight: 600;">Product Test Engineer</p>
+                <ul>
+                    <li>Tested CCaaS (Contact Center as a Service) platform from scratch to deployment</li>
+                    <li>Conducted end-to-end testing for Appointment Booking system</li>
+                    <li>Created 200+ manual test cases covering all functional requirements</li>
+                    <li>Performed regression, smoke, and sanity testing for every release</li>
+                    <li>Collaborated with development team to ensure timely bug fixes</li>
+                    <li>Maintained test case repository and updated documentation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-name">HHF (Hindustan Housing Finance)</div>
+                <p style="color: #666; margin-top: 10px;">Comprehensive testing of housing finance and loan management platform with focus on loan processing, EMI calculations, transaction security, and regulatory compliance.</p>
+                <span class="domain-tag">Banking Domain</span>
+            </div>
+
+            <div class="project-card" style="animation-delay: 0.1s;">
+                <div class="project-name">Emiza (Enterprise Inventory Management)</div>
+                <p style="color: #666; margin-top: 10px;">End-to-end testing of warehouse management system including inventory tracking, order fulfillment, and logistics automation.</p>
+                <span class="domain-tag">Warehouse Management</span>
+            </div>
+
+            <div class="project-card" style="animation-delay: 0.2s;">
+                <div class="project-name">Fridex (Online Retail Platform)</div>
+                <p style="color: #666; margin-top: 10px;">Complete testing of e-commerce platform covering product catalog, shopping cart, payment gateway integration, and order management.</p>
+                <span class="domain-tag">E-commerce</span>
+            </div>
+
+            <div class="project-card" style="animation-delay: 0.3s;">
+                <div class="project-name">CCaaS (Contact Center as a Service)</div>
+                <p style="color: #666; margin-top: 10px;">Testing cloud-based contact center solution with focus on call routing and customer interaction management.</p>
+                <span class="domain-tag">Telecom Domain</span>
+            </div>
+
+            <div class="project-card" style="animation-delay: 0.4s;">
+                <div class="project-name">Appointment Booking System</div>
+                <p style="color: #666; margin-top: 10px;">Automated testing of scheduling system ensuring seamless booking experience, calendar integration, and notification services.</p>
+                <span class="domain-tag">SaaS Platform</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education">
+                <h3>Bachelor of Engineering (B.E)</h3>
+                <p>Electronics and Communication Engineering (ECE)</p>
+                <p style="margin-top: 10px; font-size: 1.1em;">RMK College of Engineering and Technology</p>
+                <p style="margin-top: 8px; font-size: 1em; opacity: 0.95;">2019 - 2023</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Testing Expertise</h2>
+            <ul style="font-size: 1.05em; color: #555;">
+                <li>Writing comprehensive test scenarios for complex applications</li>
+                <li>Creating detailed and executable test cases</li>
+                <li>Performing thorough test execution and defect tracking</li>
+                <li>Building automation frameworks using Java Selenium</li>
+                <li>Implementing TestNG for test organization and grouping</li>
+                <li>Generating professional Extent Reports for stakeholders</li>
+                <li>API testing using Postman</li>
+                <li>Cross-domain testing experience (Healthcare, Telecom, Banking, E-commerce)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact Me</h2>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+                <div style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; padding: 12px 20px; border-radius: 10px; font-size: 0.9em; transition: transform 0.3s ease; box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    📱 +91 93829 39839
+                </div>
+                <div style="background: linear-gradient(135deg, #0077B5 0%, #00A0DC 100%); color: white; padding: 12px 20px; border-radius: 10px; font-size: 0.9em; transition: transform 0.3s ease; box-shadow: 0 3px 10px rgba(0, 119, 181, 0.3);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="https://www.linkedin.com/in/dhanushsomu28" target="_blank" style="color: white; text-decoration: none;">💼 LinkedIn Profile</a>
+                </div>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 20px; border-radius: 10px; font-size: 0.9em; transition: transform 0.3s ease; box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    📞 +91 93829 39388
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dhanush Kumar | Automation Test Engineer</p>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.9;">Committed to Delivering Quality Software</p>
+        <p style="margin-top: 15px; font-size: 0.95em;">📧 Let's Connect and Build Quality Together!</p>
+    </footer>
+</body>
+</html>
